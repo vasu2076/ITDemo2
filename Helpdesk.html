@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help desk</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+      margin: 0;
+      background-color: #111;
+    }
+    .navbar {
+      background-color: #111;
+      padding: 1rem 2rem;
+    }
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    .nav-link {
+      color: #ddd !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+    }
+    .nav-link:hover, .dropdown-item:hover {
+      color: #0056b3 !important;
+    }
+    .btn-cta {
+      background-color: #007BFF;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1.2rem;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-cta:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    .dropdown-menu {
+      background-color: #222;
+    }
+    .dropdown-item {
+      color: #ccc;
+    }
+    .dropdown-item:hover {
+      background-color: #333;
+    }
+ .hd-hero-section {
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+  z-index: 1;
+  background: #fff;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.hd-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.hd-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+.hd-hero-title mark {
+  background: transparent;
+  color: #007bff;
+  font-weight: 700;
+}
+.hd-hero-content p {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #555;
+}
+.hd-hero-form {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+.hd-hero-form input[type="email"] {
+  border: none;
+  flex-grow: 1;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  outline: none;
+  min-width: 0;
+  flex: 1 1 60%;
+}
+.hd-hero-form button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1 1 35%;
+}
+.crm-special-features {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #777;
+  margin-top: 20px;
+}
+.crm-special-features li {
+  display: flex;
+  align-items: center;
+}
+.dot {
+  height: 8px;
+  width: 8px;
+  background: #007bff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.hd-hero-man,
+.hd-hero-girl,
+.desk-girl,
+.line-plan {
+  position: absolute;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+}
+.hd-hero-man {
+  left: 0;
+  bottom: 0;
+  width: 250px;
+}
+.hd-hero-girl {
+  right: 0;
+  bottom: 0;
+  width: 250px;
+}
+.desk-girl {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  border-radius: 50%;
+}
+.line-plan {
+  top: 0;
+  left: 0;
+  width: 120px;
+}
+@media (max-width: 768px) {
+  .hd-hero-title {
+    font-size: 32px;
+  }
+  .hd-hero-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hd-hero-form input,
+  .hd-hero-form button {
+    width: 100%;
+  }
+  .hd-hero-man,
+  .hd-hero-girl {
+    width: 150px;
+  }
+  .desk-girl {
+    width: 45px;
+  }
+  .line-plan {
+    width: 80px;
+  }
+}
+
+       .ptb-120 {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        .containe {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-lg-end {
+            text-align: right;
+        }
+        .text-lg-start {
+            text-align: left;
+        }
+        .clr-text {
+            color: #999;
+        }
+        .hd-description p,
+        .htw-single-box p {
+            font-size: 16px;
+            color: #ccc;
+        }
+.htw-single-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: left;
+    min-height: 320px;
+      flex: 1 1 300px;
+    max-width: 360px;
+}
+.htw-single-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+.htw-single-box .number-serial {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(102, 114, 251, 0.1);
+    z-index: 0;
+}
+.htw-single-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+}
+.htw-single-box p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+.htw-single-box .read-more-link {
+    font-weight: 600;
+    font-size: 14px;
+    color: #6672FB;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+.htw-single-box .read-more-link i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+        .read-more-link {
+            text-decoration: none;
+            color: #6672FB;
+            font-weight: bold;
+        }
+        .read-more-link i {
+            margin-left: 5px;
+        }
+        mark {
+            background: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .arrow-rounded {
+            bottom: -10px;
+            left: 100%;
+            transform: translateX(-50%);
+        }
+        @media screen and (max-width: 768px) {
+            .text-lg-end,
+            .text-lg-start {
+                text-align: center;
+            }
+        }
+        .how-it-works-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+.hd-description,
+.hd-title {
+    flex: 1 1 300px;
+}
+.hd-description {
+    text-align: center;
+}
+.hd-title {
+    text-align: center;
+}
+@media (min-width: 992px) {
+    .hd-description {
+        text-align: right;
+        padding-right: 2rem;
+    }
+    .hd-title {
+        text-align: left;
+        padding-left: 2rem;
+    }
+}
+.htw-single {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+  .custom-ptb-120 {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+    .custom-clr-text {
+      color: #ccc;
+    }
+    mark {
+      background-color: transparent;
+      padding: 0;
+      position: relative;
+    }
+    mark img.custom-line-shape {
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: auto;
+    }
+    .custom-hd-accordion .accordion-item {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .custom-hd-accordion .accordion-header a {
+      display: block;
+      padding: 15px 20px;
+      font-weight: 600;
+      color: #0b093b;
+      text-decoration: none;
+    }
+    .custom-hd-accordion .accordion-collapse {
+      padding: 0 20px 20px;
+    }
+    .custom-hd-accordion .accordion-body p {
+      font-size: 15px;
+      color: #555;
+    }
+    .custom-hd-support-right img {
+      border-radius: 10px;
+    }
+    .custom-hd_exbox {
+      bottom: 20px;
+      left: 20px;
+    }
+    .custom-hd_exbox_content {
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .custom-hd_exbox_content h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+      color: #007bff;
+    }
+    .custom-hd_exbox_content p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .custom-hd-support-box-wrapper {
+      gap: 15px;
+    }
+    .custom-hd-support-box {
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      margin: 5px;
+    }
+    .custom-hd-support-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .custom-icon-wrapper {
+      font-size: 20px;
+      color: #0b093b;
+    }
+    .accordion-item.active {
+      border-color: #0d6efd;
+    }
+    @media (max-width: 767px) {
+      .custom-hd_exbox {
+        position: static !important;
+        margin-top: 15px;
+      }
+    }
+    .dec{
+      color: #999;
+    }
+    .conta {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+}
+.hd-feature-section {
+  padding: 80px 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.center {
+  justify-content: center;
+}
+.align {
+  align-items: center;
+  justify-content: space-between;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.hd-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #999;
+  position: relative;
+  text-align: center;
+}
+.highlight {
+  background: transparent;
+  color: #007bff;
+  position: relative;
+  display: inline-block;
+}
+.line-shape {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 10px;
+}
+.text-block {
+  flex: 1 1 45%;
+  padding: 20px;
+}
+.image-block {
+  flex: 1 1 45%;
+  text-align: center;
+}
+.image-block img {
+  max-width: 100%;
+  height: auto;
+}
+.text-block h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #999;
+}
+.text-block p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+.read-more-link {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.read-more-link:hover {
+  color: #0056b3;
+}
+.read-more-link i {
+  margin-left: 6px;
+}
+.hd-faq-section {
+      padding-bottom: 80px;
+    }
+    .hd-chat-box {
+      background-color: #5d3eff;
+      border-radius: 12px;
+      padding: 30px;
+      color: #fff;
+    }
+    .hd-chat-box h3 {
+      font-weight: 700;
+    }
+    .hd-chat-box p {
+      font-size: 15px;
+      line-height: 1.6;
+   }
+    .hd-chat-box a.read-more-link {
+      font-weight: 600;
+      text-decoration: none;
+      color: #ffc107;
+    }
+    .hd-chat-box img {
+      max-width: 100%;
+      height: auto;
+    }
+    .hd-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .hd-title mark {
+      background: none;
+      color: #007bff;
+      font-weight: bold;
+      position: relative;
+    }
+    .hd-title mark img {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100px;
+    }
+    .accordion-button {
+      background-color: #fff;
+      color: #000;
+      font-weight: 600;
+    }
+    .accordion-button:not(.collapsed) {
+      color: #007bff;
+      background-color: #f0f0ff;
+    }
+    .accordion-body {
+      font-size: 14px;
+    }
+    .accordion-item {
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: #fff;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+    .accordion {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    @media (max-width: 767px) {
+      .hd-chat-box, .hd-title {
+        text-align: center;
+      }
+    }
+      .footer-area-wrapper {
+    color: #ccc;
+  }
+  .footer-area {
+    padding: 70px 0 40px;
+    border-top: 1px solid #333;
+  }
+  .footer-area h6 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-area ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-area a {
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  .footer-area a:hover {
+    color: #1e90ff;
+  }
+  .footer-area img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  .footer-area .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-area .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .footer-area .col {
+    flex: 1 1 200px;
+    min-width: 180px;
+  }
+   .footer-bottom {
+    background-color: #181818;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-bottom .copyright-text {
+    color: #ccc;
+  }
+  .footer-bottom .copyright-text a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  .footer-bottom .copyright-text a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-bottom .social-icons a {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .footer-bottom .social-icons i {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .footer-bottom .social-icons a:hover {
+    background-color: #1e90ff;
+  }
+  .footer-bottom .social-icons a:hover i {
+    color: #fff;
+  }
+       .ads{
+    color: #bbb;
+  }
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.footer-gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.footer-gallery img:hover {
+  transform: scale(1.05);
+}
+   </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+     IT Demo
+  </a>
+  <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./index.html">Home</a></li>
+    <li><a class="dropdown-item" href="./DigitalAgency.html">Digital Agency</a></li>
+    <li><a class="dropdown-item" href="./AI.html">AI Technologies</a></li>
+    <li><a class="dropdown-item" href="./CustomSoftware.html">Software Solutions</a></li>
+    <li><a class="dropdown-item" href="./Seoservice.html">SEO Services</a></li>
+    <li><a class="dropdown-item" href="./Startup.html">Startup</a></li>
+    <li><a class="dropdown-item" href="./marketingAgency.html">Marketing Agency</a></li>
+    <li><a class="dropdown-item" href="./Helpdesk.html">Helpdesk</a></li>
+    <li><a class="dropdown-item" href="./AInetwork.html">AI Network</a></li>
+  </ul>
+</li>
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./About-us.html">About Us — 1</a></li>
+    <li><a class="dropdown-item" href="./About-us2.html">About Us — 2</a></li>
+    <li><a class="dropdown-item" href="./Servicesa.html">Services — 1</a></li>
+    <li><a class="dropdown-item" href="./Servicesw.html">Services — 2</a></li>
+    <li><a class="dropdown-item" href="./ourteam.html">Our Team</a></li>
+    <li><a class="dropdown-item" href="./FAQs.html">FAQs</a></li>
+    <li><a class="dropdown-item" href="./pricing 1.html">Pricing — 1</a></li>
+    <li><a class="dropdown-item" href="./pricing2.html">Pricing — 2</a></li>
+    <li><a class="dropdown-item" href="./Contect-us.html">Contact Us — 1</a></li>
+    <li><a class="dropdown-item" href="./contect us2.html">Contact Us — 2</a></li>
+    <li><a class="dropdown-item" href="./AIfetures.html">AI Features</a></li>
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Tools</a>
+      <ul class="dropdown-menu">
+      </ul>
+    </li>
+  </ul>
+</li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portfolio</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="./ourwork.html">Our Works</a></li>
+          <li><a class="dropdown-item" href="./Singlepage.html">Single-Project</a></li>
+        </ul>
+      </li>
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./blogs.html">Blog — Standard</a></li>
+    <li><a class="dropdown-item" href="./blogg.html">Blog — Grid</a></li>
+    <li><a class="dropdown-item" href="./blogws.html">With Sidebar</a></li>
+    <li><a class="dropdown-item" href="./blogwithout.html">Without Sidebar</a></li>
+  </ul>
+</li>
+      <li class="nav-item">
+        <a class="nav-link" href="./Contect-us.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="d-none d-lg-block ms-auto">
+    <a href="#" class="btn btn-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<section class="hd-hero-section">
+  <img src="./hero-man.png" alt="man" class="hd-hero-man">
+  <img src="./hero-girl.png" alt="girl" class="hd-hero-girl">
+  <img src="./desk-girl.png" alt="line" class="line-plan">
+
+  <div class="container">
+    <div class="hd-hero-content">
+      <h1 class="hd-hero-title">A Better Way to Talk With <br>Your 
+        <mark>Customers</mark>
+      </h1>
+      <p>Be available right where your customers need it, and give your team the automatically.</p>
+      <form class="hd-hero-form">
+        <input type="email" placeholder="Enter your Email" />
+        <button type="submit">Try For Free</button>
+      </form>
+      <ul class="crm-special-features">
+        <li><span class="dot me-2"></span>Free 7 Days trial</li>
+        <li><span class="dot me-2"></span>No Credit Card Required</li>
+        <li><span class="dot me-2"></span>Cancel anytime</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <section class="hd-htw-section ptb-120">
+        <div class="containe">
+           <div class="how-it-works-flex">
+    <div class="hd-description">
+        <p>
+           Empower your team with cutting-edge tools and seamless collaboration. Easily customize and manage support workflows to improve customer satisfaction.
+        </p>
+    </div>
+    <div class="hd-title">
+        <h2 class="clr-text">Start with Quiety in <br>Simple Steps!</h2>
+    </div>
+</div>
+           <div class="htw-single">
+                    <div class="htw-single-box">
+                        <span class="number-serial">1</span>
+                        <h4>Start Your HelpDesk</h4>
+                        <p>Be available right where your custom collaboration messages in one place. Build
+                            better bonds automatically.</p>
+                        <a href="#" class="read-more-link">Free sign up <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+
+                    <div class="htw-single-box">
+                        <span class="number-serial">2</span>
+                        <h4>Simple Ticket Management</h4>
+                        <p>Be available right where your custom collaboration messages in one place. Build
+                            better bonds automatically.</p>
+                        <a href="#" class="read-more-link">Free sign up <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+
+                    <div class="htw-single-box">
+                        <span class="number-serial">3</span>
+                        <h4>Start Collaborating</h4>
+                        <p>Engage users, track performance, and improve support efficiency with real-time updates and automation.</p>
+                        <a href="#" class="read-more-link">Free sign up <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="custom-hd-support-section custom-ptb-120 overflow-hidden">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="custom-hd-suppport-content">
+          <div class="custom-hd-title text-center text-lg-start">
+            <h2 class="custom-clr-text">Improve the Quality of Your IT Help 
+              <mark class="bg-transparent p-0 position-relative">
+                Desk Support
+              </mark>
+            </h2>
+          </div>
+
+          <div class="accordion custom-hd-accordion mt-5" id="hd_accordion">
+            <div class="accordion-item active">
+              <div class="accordion-header">
+                <a href="#hd_acc1" data-bs-toggle="collapse">Feedback Requests</a>
+              </div>
+              <div class="accordion-collapse collapse show" id="hd_acc1" data-bs-parent="#hd_accordion">
+                <div class="accordion-body pt-0">
+                  <p>Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <a href="#hd_acc2" class="collapsed" data-bs-toggle="collapse">HelpDesk Analytics</a>
+              </div>
+              <div class="accordion-collapse collapse" id="hd_acc2" data-bs-parent="#hd_accordion">
+                <div class="accordion-body pt-0">
+                  <p>Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <a href="#hd_acc3" class="collapsed" data-bs-toggle="collapse">Ticket Tagging</a>
+              </div>
+              <div class="accordion-collapse collapse" id="hd_acc3" data-bs-parent="#hd_accordion">
+                <div class="accordion-body pt-0">
+                  <p>Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="custom-hd-support-right position-relative z-1">
+          <img src="https://quiety.themetags.com/assets/img/help-desk/support-1.png" alt="support" class="img-fluid">
+          <div class="custom-hd_exbox d-inline-block position-absolute z-1">
+            <div class="custom-hd_exbox_content bg-white">
+              <h2 class="mb-0">12+</h2>
+              <p class="mb-0">Years of Expertise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-ptb-120">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="custom-hd-support-img">
+            <img src="./support-2.png" alt="support" class="img-fluid">
+          </div>
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2">
+          <div class="custom-hd-support-content">
+            <div class="custom-hd-title">
+              <h2 class="mb-3 custom-clr-text">Support any Channel <br> With on 
+                <mark class="bg-transparent p-0 position-relative">Platform 
+                </mark>
+              </h2>
+              <p class="dec">Distinctively initiate viral ideas for goal-oriented partnerships. Appropriately network cross-media opportunities with cross-platform total linkage. Uniquely create turnkey value rather than revolutionary applications. Dynamically architect.</p>
+            </div>
+
+            <div class="custom-hd-support-box-wrapper mt-5 d-flex align-items-center flex-wrap ">
+              <div class="custom-hd-support-box bg-white d-inline-flex align-items-center">
+                <span class="custom-icon-wrapper"><i class="fa-regular fa-envelope"></i></span>
+                <p class="mb-0 ms-3">Messaging</p>
+              </div>
+              <div class="custom-hd-support-box bg-white d-inline-flex align-items-center">
+                <span class="custom-icon-wrapper"><i class="fa-brands fa-whatsapp"></i></span>
+                <p class="mb-0 ms-3">WhatsApp</p>
+              </div>
+              <div class="custom-hd-support-box bg-white d-inline-flex align-items-center">
+                <span class="custom-icon-wrapper"><i class="fa-brands fa-discord"></i></span>
+                <p class="mb-0 ms-3">Discord</p>
+              </div>
+              <div class="custom-hd-support-box bg-white d-inline-flex align-items-center">
+                <span class="custom-icon-wrapper"><i class="fa-brands fa-slack"></i></span>
+                <p class="mb-0 ms-3">Slack</p>
+              </div>
+              <div class="custom-hd-support-box bg-white d-inline-flex align-items-center">
+                <span class="custom-icon-wrapper"><i class="fa-brands fa-skype"></i></span>
+                <p class="mb-0 ms-3">Skype</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+ <section class="hd-feature-section">
+    <div class="conta">
+      <div class="row center">
+        <div class="hd-title text-center">
+          <h2>
+            Discover why IT Demo is <br>
+            Unique <mark class="highlight">Feature </mark>
+          </h2>
+        </div>
+      </div>
+
+      <div class="row align">
+        <div class="text-block">
+          <h3>IT Demo Desk for Internal Teams Support</h3>
+          <p>
+            Distinctively initiate viral ideas for goal-oriented partnerships. Right network
+            cross-media opportunities with cross-platform total linkage. Uniquely create turnkey value
+            revolutionary applications.
+          </p>
+          <a href="#" class="read-more-link">Try our demo <i class="fas fa-arrow-right-long"></i></a>
+        </div>
+        <div class="image-block">
+          <img src="https://quiety.themetags.com/assets/img/help-desk/network.png" alt="Network" />
+        </div>
+      </div>
+
+      <div class="row align reverse">
+        <div class="image-block">
+          <img src="https://quiety.themetags.com/assets/img/help-desk/business-man.png" alt="Business Man" />
+        </div>
+        <div class="text-block">
+          <h3>Tech Support for Customers & External Users</h3>
+          <p>
+            Distinctively initiate viral ideas for goal-oriented partnerships. Appropriately
+            network cross-media opportunities with cross-platform total linkage. Uniquely create turnkey
+            value rather than revolutionary applications. Dynamically architect.
+          </p>
+          <a href="#" class="read-more-link">Try our demo <i class="fas fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hd-faq-section pt-5">
+  <div class="container">
+    <div class="row g-5 justify-content-center">
+      <div class="col-xl-5 col-lg-8">
+        <div class="hd-chat-box">
+          <h3 class="mb-3">24/7 Chat Support<br>for all IT Demo Desk Users</h3>
+          <p class="mb-4">Distinctively initiate viral ideas for goal-oriented partnerships. Appropriately network cross-media opportunities platform total linkage. Uniquely create turnkey value rather than revolutionary applications. Dynamically architect.</p>
+          <a href="#" class="read-more-link">Chat with us Right Now <i class="fas fa-angle-right ms-1"></i></a>
+          <img src="https://quiety.themetags.com/assets/img/help-desk/illustration.png" alt="illustration" class="img-fluid mt-4">
+        </div>
+      </div>
+      <div class="col-xl-7 col-lg-8 align-self-end">
+        <div class="hd-faq-wrapper">
+          <div class="hd-title mb-4">
+            <h2 class="clr-text">Got Questions? <br> We've Got 
+              <mark>Answers </mark>
+            </h2>
+          </div>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                  What is a help desk?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  IT service desk receives repetitive questions
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Distinctively initiate viral ideas for goal-oriented partnerships. Appropriately network cross-media opportunities platform total linkage. Uniquely create turnkey value rather than revolutionary applications. Dynamically architect.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                  IT help desk for internal teams
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                  What is a help desk?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Globally whiteboard global web-readiness rather than holistic action items. Uniquely communicate synergistic markets.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <div class="footer-area-wrapper">
+  <div class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col info">
+           <h6> Contact</h6>
+          <ul class="text-muted">
+            <li><a href="#">contact@aeroland.com</a></li>
+            <li><a href="#">(+68)1221 09876</a></li>
+            <li><a href="#">www.ITDemo.xperts.com</a></li>
+            <li class="ads">58 Howard Street #2 San Francisco, CA 941</li>
+          </ul>
+        </div>
+
+        <!-- IT Services -->
+        <div class="col">
+          <h6>IT Services</h6>
+          <ul>
+            <li><a href="#">Managed IT</a></li>
+            <li><a href="#">IT Support</a></li>
+            <li><a href="#">IT Consultancy</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cyber Security</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#">Pick up locations</a></li>
+            <li><a href="#">Terms of Payment</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Support</h6>
+          <ul>
+            <li><a href="#">Forum Support</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Pricing and Plans</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      <div class="col gallery-col">
+  <h6>Our Gallery</h6>
+  <div class="footer-gallery">
+    <img src="./instagram1.jpg" alt="img">
+    <img src="./instagram2.jpg" alt="img">
+    <img src="./instagram3.jpg" alt="img">
+    <img src="./instagram4.jpg" alt="img">
+    <img src="./p3.jpg" alt="img">
+    <img src="./p4.jpg" alt="img">
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="copyright-text">
+      © 2023 IT Demo. <a href="#">All Rights Reserved.</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
