@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+      margin: 0;
+      background-color: #111;
+    }
+
+    .navbar {
+      background-color: #111;
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+
+    .nav-link {
+      color: #ddd !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+    }
+
+    .nav-link:hover, .dropdown-item:hover {
+      color: #0056b3 !important;
+    }
+
+    .btn-cta {
+      background-color: #007BFF;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1.2rem;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-cta:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    .dropdown-menu {
+      background-color: #222;
+    }
+
+    .dropdown-item {
+      color: #ccc;
+    }
+
+    .dropdown-item:hover {
+      background-color: #333;
+    }
+   .hero-section {
+      background: url('https://it-techh.netlify.app/images/hero_bg.png') no-repeat center center/cover;
+      padding-top: 228px;
+      padding-bottom: 212px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-text h5 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-text h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+      text-transform: uppercase;
+      line-height: 64px;
+      letter-spacing: -2px;
+      color: #fff;
+    }
+    .hero-text p {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 20px 0;
+      font-size: 18px;
+    }
+    .primary-btn {
+      background: #007bff;
+      padding: 12px 24px;
+      border-radius: 40px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .hero-images {
+      position: relative;
+    }
+    .hero-main-img {
+      width: 100%;
+      max-width: 550px;
+      animation: floatUpDown 4s ease-in-out infinite;
+    }
+    .shape1 {
+      position: absolute;
+      top: -25%;
+      left: 30%;
+      animation: rotateShape 10s linear infinite;
+    }
+    .shape2 {
+      position: absolute;
+      top: 60px;
+      right: -30px;
+      animation: floatWiggle 4s ease-in-out infinite;
+    }
+    .hand-img {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      animation: floatWiggle 3s ease-in-out infinite;
+    }
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    @keyframes floatWiggle {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(2deg);
+      }
+    }
+    @keyframes rotateShape {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 36px;
+        line-height: 48px;
+      }
+      .hero-images {
+        justify-content: center;
+        display: flex;
+      }
+    }
+    .section-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .section-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .left-content h5 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      color: #4d6dfd;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .left-content h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ccc;
+      line-height: 1.4;
+      margin-top: 14px;
+    }
+    @media (min-width: 768px) {
+      .left-content h1 {
+        font-size: 42px;
+        line-height: 52px;
+      }
+    }  
+      .containe {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .col-lg-4, .col-md-6 {
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+    }
+    @media (max-width: 992px) {
+      .col-lg-4, .col-md-6 {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+    @media (max-width: 600px) {
+      .col-lg-4, .col-md-6 {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+    .service-box {
+      background-color: #f8f9fb;
+      border-radius: 12px;
+      padding: 25px 20px 30px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+    .service-box .icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(70, 91, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-box .icon img {
+      width: 32px;
+      height: auto;
+    }
+    .service-box .heading h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    .service-box .heading h4 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .service-box .heading p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .service-box .arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #0037ae;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .service-box .arrow:hover {
+      color: #005eff;
+    }
+    .contai {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.blog-subtitle {
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.blog-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ccc;
+}
+
+.highlight-text {
+  color: #0066ff;
+}
+
+.blog-section {
+  padding: 80px 0;
+  background-color: #111; /* Optional: Dark BG for contrast */
+}
+
+.blog-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.blog-column {
+  flex: 0 0 32%;
+  max-width: 32%;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+
+.blog-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-info {
+  padding: 20px;
+}
+
+.blog-meta {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.blog-meta-icon {
+  margin-right: 5px;
+  color: #999;
+}
+
+.blog-title a {
+  font-size: 18px;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-excerpt {
+  margin-top: 15px;
+  color: #666;
+  font-size: 15px;
+}
+
+.read-more-link a {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.read-more-link i {
+  margin-left: 5px;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 991px) {
+  .blog-column {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .blog-heading {
+    font-size: 28px;
+  }
+
+  .blog-subtitle {
+    font-size: 12px;
+  }
+
+  .blog-title a {
+    font-size: 16px;
+  }
+
+  .blog-excerpt {
+    font-size: 14px;
+  }
+}
+
+      .main-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      margin: 0px 10%;
+    }
+    .text-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-section img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .section-title h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ccc;
+    }
+    .text-color-primary {
+      color: #0066ff;
+    }
+    .text {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #999;
+    }
+    .btn-box {
+      margin-top: 30px;
+    }
+    .btn-box a {
+      margin-right: 15px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #0066ff;
+      color: #fff;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .btn-box a:hover {
+      background-color: #004bb5;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .team-member {
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+    }
+    .team-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .team-image img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .team-member:hover .team-image img {
+      transform: scale(1.05) translateY(-10px);
+    }
+    .social-networks {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      background: #004bb5;
+      text-align: center;
+      padding: 10px 0;
+      transition: bottom 0.4s ease;
+    }
+    .team-member:hover .social-networks {
+      bottom: 0;
+    }
+    .social-networks a {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .team-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .team-info .name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+    }
+    .team-info .position {
+      color: #777;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    @media (max-width: 768px) {
+      .main-wrapper {
+        flex-direction: column;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+     .choose-section {
+        margin-top: 20px;
+        background-color: #fff;
+      padding: 80px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+    }
+    .choose-left {
+      max-width: 550px;
+    }
+    .choose-left h5 {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #4d6dfd;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .choose-left h1 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      color: #0f0f0f;
+    }
+    .choose-list {
+      border-top: 1px solid #ccc;
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .choose-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .choose-icon {
+      width: 62px;
+      height: 62px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .choose-icon img {
+      width: 28px;
+      height: 28px;
+      filter: invert(1);
+    }
+    .choose-text h5 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .choose-text p {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      color: #555;
+    }
+    .choose-btn {
+      margin-top: 30px;
+    }
+       .primary-btn {
+      background: #007bff;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    .primary-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .choose-right img {
+      max-width: 100%;
+    }
+    .plant-img {
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      width: 100px;
+      display: none;
+    }
+    @media(min-width: 1200px) {
+      .plant-img {
+        display: block;
+      }
+    }
+  .footer-area-wrapper {
+    color: #ccc;
+  }
+  .footer-area {
+    padding: 70px 0 40px;
+    border-top: 1px solid #333;
+    margin:  0% 20%;
+  }
+  .footer-area h6 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-area ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-area a {
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  .footer-area a:hover {
+    color: #1e90ff;
+  }
+  .footer-area img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  .footer-area .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-area .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .footer-area .col {
+    flex: 1 1 200px;
+    min-width: 180px;
+  }
+   .footer-bottom {
+    background-color: #181818;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-bottom .copyright-text {
+    color: #ccc;
+  }
+  .footer-bottom .copyright-text a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  .footer-bottom .copyright-text a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-bottom .social-icons a {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .footer-bottom .social-icons i {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .footer-bottom .social-icons a:hover {
+    background-color: #1e90ff;
+  }
+  .footer-bottom .social-icons a:hover i {
+    color: #fff;
+  }
+       .ads{
+    color: #bbb;
+  }
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.footer-gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.footer-gallery img:hover {
+  transform: scale(1.05);
+}
+   </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+     IT Demo
+  </a>
+  <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./index.html">Home</a></li>
+    <li><a class="dropdown-item" href="./DigitalAgency.html">Digital Agency</a></li>
+    <li><a class="dropdown-item" href="./AI.html">AI Technologies</a></li>
+    <li><a class="dropdown-item" href="./CustomSoftware.html">Software Solutions</a></li>
+    <li><a class="dropdown-item" href="./Seoservice.html">SEO Services</a></li>
+    <li><a class="dropdown-item" href="./Startup.html">Startup</a></li>
+    <li><a class="dropdown-item" href="./marketingAgency.html">Marketing Agency</a></li>
+    <li><a class="dropdown-item" href="./Helpdesk.html">Helpdesk</a></li>
+    <li><a class="dropdown-item" href="./AInetwork.html">AI Network</a></li>
+  </ul>
+</li>
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./About-us.html">About Us — 1</a></li>
+    <li><a class="dropdown-item" href="./About-us2.html">About Us — 2</a></li>
+    <li><a class="dropdown-item" href="./Servicesa.html">Services — 1</a></li>
+    <li><a class="dropdown-item" href="./Servicesw.html">Services — 2</a></li>
+    <li><a class="dropdown-item" href="./ourteam.html">Our Team</a></li>
+    <li><a class="dropdown-item" href="./FAQs.html">FAQs</a></li>
+    <li><a class="dropdown-item" href="./pricing 1.html">Pricing — 1</a></li>
+    <li><a class="dropdown-item" href="./pricing2.html">Pricing — 2</a></li>
+    <li><a class="dropdown-item" href="./Contect-us.html">Contact Us — 1</a></li>
+    <li><a class="dropdown-item" href="./contect us2.html">Contact Us — 2</a></li>
+    <li><a class="dropdown-item" href="./AIfetures.html">AI Features</a></li>
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Tools</a>
+      <ul class="dropdown-menu">
+      </ul>
+    </li>
+  </ul>
+</li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portfolio</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="./ourwork.html">Our Works</a></li>
+          <li><a class="dropdown-item" href="./Singlepage.html">Single-Project</a></li>
+        </ul>
+      </li>
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./blogs.html">Blog — Standard</a></li>
+    <li><a class="dropdown-item" href="./blogg.html">Blog — Grid</a></li>
+    <li><a class="dropdown-item" href="./blogws.html">With Sidebar</a></li>
+    <li><a class="dropdown-item" href="./blogwithout.html">Without Sidebar</a></li>
+  </ul>
+</li>
+      <li class="nav-item">
+        <a class="nav-link" href="./Contect-us.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="d-none d-lg-block ms-auto">
+    <a href="#" class="btn btn-cta">Get in Touch</a>
+  </div>
+</nav>
+
+ <section class="hero-section">
+    <div class="container">
+      <div class="hero-text">
+        <h5><img src="https://it-techh.netlify.app/images/hero-title-shape1.png" alt="Shape" width="24">The Best Software Agency</h5>
+        <h1>Providing Software<br> Solutions for Your<br> Any Business</h1>
+        <p>Continually formulate B2C partnerships orthogonal<br>software maintainable quality through low budgets</p>
+        <a href="/about3"><button class="primary-btn">Discover More <i class="fa-solid fa-arrow-right"></i></button></a>
+      </div>
+      <div class="hero-images">
+        <img src="https://it-techh.netlify.app/images/hero-thumb-1.png" alt="Hero" class="hero-main-img">
+        <img src="https://it-techh.netlify.app/images/hero-shape1.png" alt="Shape1" class="shape1" width="80" height="80">
+        <img src="https://it-techh.netlify.app/images/hero-shape2.png" alt="Shape2" class="shape2" width="100" height="100">
+      </div>
+    </div>
+    <img src="https://it-techh.netlify.app/images/hand-img.png" alt="Hand" class="hand-img" width="100">
+  </section>
+
+   <section class="section-container">
+    <div class="left-content">
+      <h5>
+        WHAT WE PROVIDE
+      </h5>
+      <h1>
+        Provide High Quality Software’s<br>
+        Service for All Industry
+      </h1>
+    </div>
+    <div class="right-content">
+      <a href="#">
+        <button class="primary-btn">
+          All Service <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </a>
+    </div>
+  </section>
+
+   <div class="containe">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+            <img src="./technical-support.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+            <h4><a href="#">Consulting Service</a></h4>
+            <p>Strategic IT planning roadmap development. <br/>Business process analysis and improvement for IT <br/>solutions & technology.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+            <img src="./software-development.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+            <h4><a href="#">Software Development</a></h4>
+            <p>Mobile app development for iOS, Android, and <br/>cross-platform solutions & web application.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+            <img src="./connected-cloudscape.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+            <h4><a href="#">Cloud Solution</a></h4>
+            <p>Infrastructure as a Service (IaaS), Platform as a <br/>Service (PaaS), and Software as a Service (SaaS).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+             <img src="./cyber-security.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+             <h4><a href="#">Cyber Security</a></h4>
+           <p>Threat assessment and vulnerability analysis. <br/>Security strategy development and implementation</p>
+          </div>
+        </div>
+      </div>
+
+  
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+             <img src="./it-processing.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+             <h4><a href="#">Manage It Services</a></h4>
+           <p>Proactive IT monitoring and management <br>Network infrastructure setup and  maintenance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-box">
+          <div class="icon">
+             <img src="./custom.png" alt="">
+          </div>
+          <a href="#" class="arrow"><i class="fa-solid fa-arrow-right"></i></a>
+          <div class="heading">
+             <h4><a href="#">Custom Software Development</a></h4>
+           <p>Proactive IT monitoring and management Network <br>infrastructure setup and maintenance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="main-wrapper">
+    <div class="text-section">
+      <div class="section-title">
+        <h3>Our <span class="text-color-primary">experience</span> experts</h3>
+        <p class="text">IT Demo specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc.</p>
+        <div class="btn-box">
+          <a href="#">Join us now</a>
+          <a href="#">View all team <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-01-370x250.webp" alt="Dollie Horton" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i>     </a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Dollie Horton</h5>
+        <div class="position">Marketing</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-07-370x250.webp" alt="Stephen Mearsley" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Stephen Mearsley</h5>
+        <div class="position">President & CEO</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-04-370x250.webp" alt="Maggie Strickland" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Maggie Strickland</h5>
+        <div class="position">Financial Services</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-02-370x250.webp" alt="Monica Blews" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Monica Blews</h5>
+        <div class="position">Project Manager</div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+
+    <section class="choose-section">
+    <div class="choose-left">
+      <h5>
+        Why Choose Us?
+      </h5>
+      <h1>Brain Storming, Researcing and<br>Work Strategist Create</h1>
+      <div class="choose-list">
+        <div class="choose-item">
+          <div class="choose-icon">
+            <img src="https://it-techh.netlify.app/images/icon1.png" alt="icon1">
+          </div>
+          <div class="choose-text">
+            <h5>Free Integrations</h5>
+            <p>Competently leverage existing top-line technology maximize cost effective service done</p>
+          </div>
+        </div>
+        <div class="choose-item">
+          <div class="choose-icon">
+            <img src="https://it-techh.netlify.app/images/icon2.png" alt="icon2">
+          </div>
+          <div class="choose-text">
+            <h5>Premium Resource</h5>
+            <p>Competently leverage existing top-line technology maximize cost effective service done</p>
+          </div>
+        </div>
+        <div class="choose-item">
+          <div class="choose-icon">
+            <img src="https://it-techh.netlify.app/images/icon3.png" alt="icon3">
+          </div>
+          <div class="choose-text">
+            <h5>Unlimited Supports</h5>
+            <p>Competently leverage existing top-line technology maximize cost effective service done</p>
+          </div>
+        </div>
+      </div>
+      <div class="choose-btn">
+        <a href="#" >
+            <button class="primary-btn">
+                 Learn More <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </a>
+      </div>
+    </div>
+    <div class="choose-right">
+      <img src="https://it-techh.netlify.app/images/choose-us-thumb-1.png" alt="Why Choose Image" />
+    </div>
+    <img src="https://it-techh.netlify.app/images/shape.png" alt="Plant" class="plant-img" />
+  </section>
+
+  <div class="blog-section">
+    <div class="contai">
+      <div class="blog-header">
+        <h6 class="blog-subtitle">BLOG & NEWS</h6>
+        <h3 class="blog-heading">Latest news are <span class="highlight-text">on top all times</span></h3>
+      </div>
+      <div class="blog-row">
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-01-370x230.webp" alt="Blog 1" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">5 Ways Technology Has Improved Business Today</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>They play a role in making operations more seamless, bridging the gap between authorities, consumers and businesses. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-02-370x230.webp" alt="Blog 2" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">5 Ways Technology Has Improved Business Today</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>They play a role in making operations more seamless, bridging the gap between authorities, consumers and businesses. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-07-770x400.webp" alt="Blog 3" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">How Wireless Technology is Changing Business</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>It is far wiser to do your own installations and ensure that all data flowing through the organization has end-to-end encryption. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="footer-area-wrapper">
+  <div class="footer-area">
+    <div class="containe">
+      <div class="row">
+        <div class="col info">
+           <h6> Contact</h6>
+          <ul class="text-muted">
+            <li><a href="#">contact@aeroland.com</a></li>
+            <li><a href="#">(+68)1221 09876</a></li>
+            <li><a href="#">www.ITDemo.xperts.com</a></li>
+            <li class="ads">58 Howard Street #2 San Francisco, CA 941</li>
+          </ul>
+        </div>
+
+        <!-- IT Services -->
+        <div class="col">
+          <h6>IT Services</h6>
+          <ul>
+            <li><a href="#">Managed IT</a></li>
+            <li><a href="#">IT Support</a></li>
+            <li><a href="#">IT Consultancy</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cyber Security</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#">Pick up locations</a></li>
+            <li><a href="#">Terms of Payment</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Support</h6>
+          <ul>
+            <li><a href="#">Forum Support</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Pricing and Plans</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      <div class="col gallery-col">
+  <h6>Our Gallery</h6>
+  <div class="footer-gallery">
+    <img src="./instagram1.jpg" alt="img">
+    <img src="./instagram2.jpg" alt="img">
+    <img src="./instagram3.jpg" alt="img">
+    <img src="./instagram4.jpg" alt="img">
+    <img src="./p3.jpg" alt="img">
+    <img src="./p4.jpg" alt="img">
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="copyright-text">
+      © 2023 IT Demo. <a href="#">All Rights Reserved.</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

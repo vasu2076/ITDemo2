@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #111;
+        }
+        .navbar {
+            background-color: #111;
+            padding: 1rem 2rem;
+        }
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+        .nav-link {
+            color: #ddd !important;
+            margin: 0 0.5rem;
+            font-weight: 500;
+        }
+        .nav-link:hover, .dropdown-item:hover {
+            color: #0056b3 !important;
+        }
+        .btn-cta {
+            background-color: #007BFF;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-cta:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .dropdown-menu {
+            background-color: #222;
+        }
+        .dropdown-item {
+            color: #ccc;
+        }
+        .dropdown-item:hover {
+            background-color: #333;
+        }
+        .center {
+            text-align: center;
+            margin-top: 50px;
+            padding: 0 15px; /* Add padding for smaller screens */
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #ccc; /* Ensure h2 color is correct */
+        }
+        .toggle {
+            background: #f1f1f1;
+            display: inline-flex;
+            border-radius: 25px;
+            padding: 4px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+        .toggle button {
+            border: none;
+            background: transparent;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .toggle .active {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .pricing-table {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow items to wrap to next line */
+            padding: 0 15px; /* Add padding for smaller screens */
+        }
+        .plan {
+            border: 1px solid #ddd;
+            padding: 30px 20px;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            color: #ccc;
+            flex-grow: 1; /* Allow plans to grow and fill space */
+            max-width: 300px; /* Limit max width for larger screens */
+            margin-bottom: 20px; /* Add margin for stacking */
+        }
+        .plan h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 36px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .per {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .desc {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #999;
+        }
+        .features {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .features div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .features div span {
+            margin-left: 10px;
+        }
+        .features .yes::before {
+            content: '✔';
+            color: #2196f3;
+        }
+        .features .no::before {
+            content: '✖';
+            color: #f44336;
+        }
+        .plan button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .plan button:hover{
+            color: white;
+            background-color: #0056b3;
+        }
+        .center small{
+            color: #999;
+        }
+        .accordion {
+            max-width: 900px;
+            margin: auto;
+            margin-top: 40px;
+            padding: 0 15px; /* Add padding for smaller screens */
+        }
+        .accordion-item {
+            background-color: #f5f3f0;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        .accordion-header {
+            padding: 18px 24px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header:hover {
+            background-color: #f0eeeb;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 0 24px;
+            background-color: #fefefe;
+        }
+        .accordion-content.open {
+            padding: 16px 24px;
+            max-height: 800px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-content ul {
+            padding-left: 20px;
+        }
+        .accordion.open .accordion-icon {
+            transform: rotate(45deg);
+        }
+        .footer-area-wrapper {
+            margin-top: 50px;
+            color: #ccc;
+        }
+        .footer-area {
+            padding: 70px 0 40px;
+            border-top: 1px solid #333;
+        }
+        .footer-area h6 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .footer-area ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-area a {
+            color: #bbbbbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+        .footer-area a:hover {
+            color: #1e90ff;
+        }
+        .footer-area img {
+            max-width: 100%;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        .footer-area .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-area .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-area .col {
+            flex: 1 1 200px;
+            min-width: 180px;
+        }
+        .footer-bottom {
+            background-color: #181818;
+            padding: 20px;
+            color: #ccc;
+            font-size: 14px;
+        }
+        .footer-bottom .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap */
+            text-align: center; /* Center text on small screens */
+        }
+        .footer-bottom .copyright-text {
+            color: #ccc;
+            flex-basis: 100%; /* Take full width on small screens */
+            margin-bottom: 10px; /* Add space below copyright */
+        }
+        .footer-bottom .copyright-text a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .footer-bottom .copyright-text a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center; /* Center social icons */
+            flex-basis: 100%; /* Take full width on small screens */
+        }
+        .footer-bottom .social-icons a {
+            background-color: #333;
+            border-radius: 50%;
+            padding: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        .footer-bottom .social-icons i {
+            font-size: 14px;
+            color: #ccc;
+        }
+        .footer-bottom .social-icons a:hover {
+            background-color: #1e90ff;
+        }
+        .footer-bottom .social-icons a:hover i {
+            color: #fff;
+        }
+        .ads{
+            color: #bbb;
+        }
+        .info{
+            margin-left: 0; /* Remove fixed margin-left */
+        }
+        .footer-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .footer-gallery img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        .footer-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 1rem 1rem;
+            }
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            .btn-cta {
+                padding: 0.4rem 1rem;
+            }
+            .center h2 {
+                font-size: 26px;
+            }
+            .toggle button {
+                padding: 8px 15px;
+            }
+            .pricing-table {
+                flex-direction: column;
+                align-items: center; 
+            }
+            .plan {
+                width: 90%; 
+                max-width: 300px; 
+                margin-bottom: 25px; 
+            }
+            .footer-area .row {
+                flex-direction: column; 
+                align-items: center; 
+                gap: 20px;
+            }
+            .footer-area .col {
+                min-width: unset; 
+                text-align: center; 
+                flex: 0 0 auto;
+                width: 100%; 
+            }
+            .footer-area .col.info {
+                margin-left: 0;
+            }
+            .footer-gallery {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .footer-bottom .container {
+                flex-direction: column;
+            }
+            .footer-bottom .copyright-text {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 991px) {
+            .pricing-table {
+                justify-content: space-around; /* Distribute plans more evenly */
+            }
+            .plan {
+                width: 45%; /* Two plans per row */
+                max-width: 350px;
+            }
+            .footer-area .col {
+                flex: 1 1 45%; /* Two columns per row */
+            }
+            .footer-area .col.gallery-col {
+                flex: 1 1 100%; /* Gallery takes full width */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                justify-content: center !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            IT Demo
+        </a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./index.html">Home</a></li>
+                        <li><a class="dropdown-item" href="./DigitalAgency.html">Digital Agency</a></li>
+                        <li><a class="dropdown-item" href="./AI.html">AI Technologies</a></li>
+                        <li><a class="dropdown-item" href="./CustomSoftware.html">Software Solutions</a></li>
+                        <li><a class="dropdown-item" href="./Seoservice.html">SEO Services</a></li>
+                        <li><a class="dropdown-item" href="./Startup.html">Startup</a></li>
+                        <li><a class="dropdown-item" href="./marketingAgency.html">Marketing Agency</a></li>
+                        <li><a class="dropdown-item" href="./Helpdesk.html">Helpdesk</a></li>
+                        <li><a class="dropdown-item" href="./AInetwork.html">AI Network</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./About-us.html">About Us — 1</a></li>
+                        <li><a class="dropdown-item" href="./About-us2.html">About Us — 2</a></li>
+                        <li><a class="dropdown-item" href="./Servicesa.html">Services — 1</a></li>
+                        <li><a class="dropdown-item" href="./Servicesw.html">Services — 2</a></li>
+                        <li><a class="dropdown-item" href="./ourteam.html">Our Team</a></li>
+                        <li><a class="dropdown-item" href="./FAQs.html">FAQs</a></li>
+                        <li><a class="dropdown-item" href="./pricing 1.html">Pricing — 1</a></li>
+                        <li><a class="dropdown-item" href="./pricing2.html">Pricing — 2</a></li>
+                        <li><a class="dropdown-item" href="./Contect-us.html">Contact Us — 1</a></li>
+                        <li><a class="dropdown-item" href="./contect us2.html">Contact Us — 2</a></li>
+                        <li><a class="dropdown-item" href="./AIfetures.html">AI Features</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Tools</a>
+                            <ul class="dropdown-menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portfolio</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./ourwork.html">Our Works</a></li>
+                        <li><a class="dropdown-item" href="./Singlepage.html">Single-Project</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./blogs.html">Blog — Standard</a></li>
+                        <li><a class="dropdown-item" href="./blogg.html">Blog — Grid</a></li>
+                        <li><a class="dropdown-item" href="./blogws.html">With Sidebar</a></li>
+                        <li><a class="dropdown-item" href="./blogwithout.html">Without Sidebar</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Contect-us.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-none d-lg-block ms-auto">
+            <a href="#" class="btn btn-cta">Get in Touch</a>
+        </div>
+    </nav>
+    <div class="center">
+        <small>FLEXIBLE PRICING</small>
+        <h2>Pick the best plan for your business</h2>
+
+        <div class="toggle">
+            <button id="monthlyBtn" class="active">Monthly</button>
+            <button id="yearlyBtn">Yearly</button>
+        </div>
+    </div>
+    <div class="pricing-table">
+        <div class="plan" id="starter">
+            <h3>Starter</h3>
+            <div class="price" id="starterPrice">$50</div>
+            <div class="per">/ per month</div>
+            <p class="desc">Transform your business with our innovative solutions.</p>
+            <div class="features">
+                <div class="yes"><span>Feature pricing plan #1</span></div>
+                <div class="yes"><span>Feature pricing plan #2</span></div>
+                <div class="yes"><span>Feature pricing plan #3</span></div>
+                <div class="yes"><span>Feature pricing plan #4</span></div>
+                <div class="no"><span>Feature pricing plan #5</span></div>
+                <div class="yes"><span>Feature pricing plan #6</span></div>
+            </div>
+            <button>Order Now</button>
+        </div>
+
+        <div class="plan" id="expert">
+            <h3>Expert</h3>
+            <div class="price" id="expertPrice">$100</div>
+            <div class="per">/ per month</div>
+            <p class="desc">Transform your business with our innovative solutions.</p>
+            <div class="features">
+                <div class="yes"><span>Feature pricing plan #1</span></div>
+                <div class="yes"><span>Feature pricing plan #2</span></div>
+                <div class="yes"><span>Feature pricing plan #3</span></div>
+                <div class="yes"><span>Feature pricing plan #4</span></div>
+                <div class="yes"><span>Feature pricing plan #5</span></div>
+                <div class="yes"><span>Feature pricing plan #6</span></div>
+            </div>
+            <button>Order Now</button>
+        </div>
+
+        <div class="plan" id="advanced">
+            <h3>Advanced</h3>
+            <div class="price" id="advancedPrice">$150</div>
+            <div class="per">/ per month</div>
+            <p class="desc">Transform your business with our innovative solutions.</p>
+            <div class="features">
+                <div class="yes"><span>Feature pricing plan #1</span></div>
+                <div class="yes"><span>Feature pricing plan #2</span></div>
+                <div class="yes"><span>Feature pricing plan #3</span></div>
+                <div class="yes"><span>Feature pricing plan #4</span></div>
+                <div class="yes"><span>Feature pricing plan #5</span></div>
+                <div class="yes"><span>Feature pricing plan #6</span></div>
+            </div>
+            <button>Order Now</button>
+        </div>
+    </div>
+    <div class="accordion"> 
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                What services do you offer?
+                <span class="accordion-icon">＋</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>UI/UX Design & Prototyping</li>
+                    <li>Responsive Website Development</li>
+                    <li>Landing Pages</li>
+                    <li>SEO & Performance Optimization</li>
+                    <li>WordPress & CMS Integration</li>
+                    <li>E-Commerce Website Setup</li>
+                    <li>Web App Development (React / Vue)</li>
+                    <li>Maintenance & Support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                How long does a project take?
+                <span class="accordion-icon">＋</span>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Projects typically take between 2–10 weeks depending on the complexity, number of pages, and client feedback cycles.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Do you offer post-launch support?
+                <span class="accordion-icon">＋</span>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Yes. We offer 30 days of free maintenance, and optional monthly support plans for updates, backups, and performance monitoring.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-area-wrapper">
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col info">
+                        <h6> Contact</h6>
+                        <ul class="text-muted">
+                            <li><a href="#">contact@aeroland.com</a></li>
+                            <li><a href="#">(+68)1221 09876</a></li>
+                            <li><a href="#">www.ITDemo.xperts.com</a></li>
+                            <li class="ads">58 Howard Street #2 San Francisco, CA 941</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>IT Services</h6>
+                        <ul>
+                            <li><a href="#">Managed IT</a></li>
+                            <li><a href="#">IT Support</a></li>
+                            <li><a href="#">IT Consultancy</a></li>
+                            <li><a href="#">Cloud Computing</a></li>
+                            <li><a href="#">Cyber Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>Quick Links</h6>
+                        <ul>
+                            <li><a href="#">Pick up locations</a></li>
+                            <li><a href="#">Terms of Payment</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Where to Find Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>Support</h6>
+                        <ul>
+                            <li><a href="#">Forum Support</a></li>
+                            <li><a href="#">Help & FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Pricing and Plans</a></li>
+                            <li><a href="#">Cookies Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col gallery-col">
+                        <h6>Our Gallery</h6>
+                        <div class="footer-gallery">
+                            <img src="./instagram1.jpg" alt="img">
+                            <img src="./instagram2.jpg" alt="img">
+                            <img src="./instagram3.jpg" alt="img">
+                            <img src="./instagram4.jpg" alt="img">
+                            <img src="./p3.jpg" alt="img">
+                            <img src="./p4.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright-text">
+                    © 2023 IT Demo. <a href="#">All Rights Reserved.</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const monthlyBtn = document.getElementById("monthlyBtn");
+        const yearlyBtn = document.getElementById("yearlyBtn");
+
+        const starterPrice = document.getElementById("starterPrice");
+        const expertPrice = document.getElementById("expertPrice");
+        const advancedPrice = document.getElementById("advancedPrice");
+
+        const perMonthTexts = document.querySelectorAll(".per");
+
+        monthlyBtn.addEventListener("click", () => {
+            monthlyBtn.classList.add("active");
+            yearlyBtn.classList.remove("active");
+
+            starterPrice.textContent = "$50";
+            expertPrice.textContent = "$100";
+            advancedPrice.textContent = "$150";
+            perMonthTexts.forEach(el => el.textContent = "/ per month");
+        });
+
+        yearlyBtn.addEventListener("click", () => {
+            yearlyBtn.classList.add("active");
+            monthlyBtn.classList.remove("active");
+
+            starterPrice.textContent = "$550";
+            expertPrice.textContent = "$1100";
+            advancedPrice.textContent = "$3000";
+            perMonthTexts.forEach(el => el.textContent = "/ per year");
+        });
+    </script>
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            content.classList.toggle('open');
+            const icon = element.querySelector('.accordion-icon');
+            icon.textContent = content.classList.contains('open') ? '−' : '＋';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

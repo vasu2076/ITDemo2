@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Agency</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    body {
+      margin: 0;
+      background-color: #111;
+    }
+    .navbar {
+      background-color: #111;
+      padding: 1rem 2rem;
+    }
+   .navbar-brand {
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    .nav-link {
+      color: #ddd !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+    }
+   .nav-link:hover, .dropdown-item:hover {
+      color: #0056b3 !important;
+    }
+    .btn-cta {
+      background-color: #007BFF;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1.2rem;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-cta:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    .dropdown-menu {
+      background-color: #222;
+    }
+    .dropdown-item {
+      color: #ccc;
+    }
+    .dropdown-item:hover {
+      background-color: #333;
+    }
+      .video-container {
+      position: relative;
+      height: 1000px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: #007BFF;
+      font-size: 12vw;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+    .overlay-text span {
+     display: block;
+      font-size: 110%;
+    }
+      .Digital{
+        margin: 5% 15%;
+        text-align: center;
+    }
+     .Agency{
+      margin-left: 80%;
+    }
+     .text-slider {
+      overflow: hidden;
+      white-space: nowrap;
+      color: #fff ;
+    }
+    .text-slide {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollText 15s linear infinite;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .text-slide span {
+      display: inline-block;
+      margin-right: 2rem;
+      font-size: 60px;
+      letter-spacing: 1px;
+    }
+    @keyframes scrollText {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .footer-area-wrapper {
+    color: #ccc;
+  }
+  .footer-area {
+    padding: 70px 0 40px;
+    border-top: 1px solid #333;
+  }
+  .footer-area h6 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-area ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-area a {
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  .footer-area a:hover {
+    color: #1e90ff;
+  }
+  .footer-area img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  .footer-area .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-area .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .footer-area .col {
+    flex: 1 1 200px;
+    min-width: 180px;
+  }
+   .footer-bottom {
+    background-color: #181818;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-bottom .copyright-text {
+    color: #ccc;
+  }
+  .footer-bottom .copyright-text a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  .footer-bottom .copyright-text a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-bottom .social-icons a {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .footer-bottom .social-icons i {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .footer-bottom .social-icons a:hover {
+    background-color: #1e90ff;
+  }
+  .footer-bottom .social-icons a:hover i {
+    color: #fff;
+  }
+.slide {
+  padding: 40px 20px;
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+  height: auto; 
+}
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px; /* reduced gap for desktop */
+}
+
+.left-text {
+  max-width: 500px;
+  flex: 1;
+}
+
+.left-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+}
+.left-text p {
+  font-size: 20px;
+  color: #ccc;
+}
+.top-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  flex: 1;
+}
+.stat {
+  text-align: left;
+}
+.number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+}
+.label {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #ccc;
+}
+.bottom-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+@media (max-width: 992px) {
+  .top-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+ .left-text h2 {
+    font-size: 32px;
+  }
+  .left-text p {
+    font-size: 18px;
+  }
+  .number {
+    font-size: 42px;
+  }
+}
+@media (max-width: 768px) {
+  .left-text h2 {
+    font-size: 28px;
+  }
+  .left-text p {
+    font-size: 16px;
+  }
+  .number {
+    font-size: 36px;
+  }
+  .label {
+    font-size: 14px;
+  }
+  .bottom-stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .left-text h2 {
+    font-size: 24px;
+  }
+  .left-text p {
+    font-size: 14px;
+  }
+  .number {
+    font-size: 30px;
+  }
+  .label {
+    font-size: 13px;
+  }
+}
+       .main-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      margin: 0px 10%;
+    }
+    .text-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-section {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-section img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .section-title h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ccc;
+    }
+    .text-color-primary {
+      color: #0066ff;
+    }
+    .text {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #999;
+    }
+    .btn-box {
+      margin-top: 30px;
+    }
+    .btn-box a {
+      margin-right: 15px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #0066ff;
+      color: #fff;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .btn-box a:hover {
+      background-color: #004bb5;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .team-member {
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+    }
+    .team-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .team-image img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .team-member:hover .team-image img {
+      transform: scale(1.05) translateY(-10px);
+    }
+    .social-networks {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      background: #004bb5;
+      text-align: center;
+      padding: 10px 0;
+      transition: bottom 0.4s ease;
+    }
+    .team-member:hover .social-networks {
+      bottom: 0;
+    }
+    .social-networks a {
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .team-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .team-info .name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .team-info .position {
+      color: #777;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    @media (max-width: 768px) {
+      .main-wrapper {
+        flex-direction: column;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+        .h1{
+      text-align: center;
+       font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+  color: #ccc;
+  margin-top:3%;
+  margin-bottom: 3%;
+    }
+     .project-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  gap: 40px;
+  margin: 2% 20%;
+  background-color: #fff;
+}
+.project-text {
+  flex: 1;
+}
+.project-text h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.project-text p {
+  font-size: 14px;
+  color: #333;
+}
+.project-text a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+.project-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.project-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+     .ads{
+    color: #bbb;
+  }
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.footer-gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.footer-gallery img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 5%;
+    text-align: center;
+  }
+  .project-image, .project-text {
+    width: 100%;
+  }
+  .project-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .project-text h3 {
+    margin-top: 20px;
+  }
+}
+   </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    IT Demo
+  </a>
+  <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./index.html">Home</a></li>
+    <li><a class="dropdown-item" href="./DigitalAgency.html">Digital Agency</a></li>
+    <li><a class="dropdown-item" href="./AI.html">AI Technologies</a></li>
+    <li><a class="dropdown-item" href="./CustomSoftware.html">Software Solutions</a></li>
+    <li><a class="dropdown-item" href="./Seoservice.html">SEO Services</a></li>
+    <li><a class="dropdown-item" href="./Startup.html">Startup</a></li>
+    <li><a class="dropdown-item" href="./marketingAgency.html">Marketing Agency</a></li>
+    <li><a class="dropdown-item" href="./Helpdesk.html">Helpdesk</a></li>
+    <li><a class="dropdown-item" href="./AInetwork.html">AI Network</a></li>
+  </ul>
+</li>
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./About-us.html">About Us — 1</a></li>
+    <li><a class="dropdown-item" href="./About-us2.html">About Us — 2</a></li>
+    <li><a class="dropdown-item" href="./Servicesa.html">Services — 1</a></li>
+    <li><a class="dropdown-item" href="./Servicesw.html">Services — 2</a></li>
+    <li><a class="dropdown-item" href="./ourteam.html">Our Team</a></li>
+    <li><a class="dropdown-item" href="./FAQs.html">FAQs</a></li>
+    <li><a class="dropdown-item" href="./pricing 1.html">Pricing — 1</a></li>
+    <li><a class="dropdown-item" href="./pricing2.html">Pricing — 2</a></li>
+    <li><a class="dropdown-item" href="./Contect-us.html">Contact Us — 1</a></li>
+    <li><a class="dropdown-item" href="./contect us2.html">Contact Us — 2</a></li>
+    <li><a class="dropdown-item" href="./AIfetures.html">AI Features</a></li>
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Tools</a>
+      <ul class="dropdown-menu">
+      </ul>
+    </li>
+  </ul>
+</li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portfolio</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="./ourwork.html">Our Works</a></li>
+          <li><a class="dropdown-item" href="./Singlepage.html">Single-Project</a></li>
+        </ul>
+      </li>
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./blogs.html">Blog — Standard</a></li>
+    <li><a class="dropdown-item" href="./blogg.html">Blog — Grid</a></li>
+    <li><a class="dropdown-item" href="./blogws.html">With Sidebar</a></li>
+    <li><a class="dropdown-item" href="./blogwithout.html">Without Sidebar</a></li>
+  </ul>
+</li>
+      <li class="nav-item">
+        <a class="nav-link" href="./Contect-us.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="d-none d-lg-block ms-auto">
+    <a href="#" class="btn btn-cta">Get in Touch</a>
+  </div>
+</nav>
+
+ <div class="video-container">
+    <video autoplay muted loop>
+      <source src="https:\/\/algenix.axiomthemes.com\/wp-content\/uploads\/2025\/04\/video-hero.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay-text">
+      <span class="Digital">Digital</span>
+      <span class="Agency">Agency</span>
+    </div>
+  </div>
+   <div class="text-slider">
+   <div class="text-slide">
+     <span>RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727; RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727; RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727; RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727; RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727; RESULTS &#x2727; STRATEGIES &#x2727; SOLUTIONS &#x2727;</span>
+   </div>
+ </div>
+
+  <div class="slide">
+            <div class="top-section">
+    <div class="left-text">
+      <h2>By the numbers</h2>
+      <p>IT Demo has successfully transformed numerous businesses through innovative technology solutions.</p>
+    </div>
+    <!-- Right stats -->
+    <div class="top-stats">
+      <div class="stat">
+        <div class="number" data-target="90" data-suffix="%">0%</div>
+        <div class="label">Repeat clients</div>
+      </div>
+      <div class="stat">
+        <div class="number" data-target="10000" data-suffix="+">0+</div>
+        <div class="label">Clients served</div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Grid -->
+  <div class="bottom-stats">
+    <div class="stat">
+      <div class="number" data-target="38" data-suffix="+">0+</div>
+      <div class="label">Years of experience</div>
+    </div>
+    <div class="stat">
+      <div class="number" data-target="99000" data-suffix="+">0+</div>
+      <div class="label">Projects completed</div>
+    </div>
+    <div class="stat">
+      <div class="number" data-target="80000" data-suffix="+">0+</div>
+      <div class="label">Successful campaigns</div>
+    </div>
+    <div class="stat">
+      <div class="number" data-target="5000">0</div>
+      <div class="label">Industry awards</div>
+    </div>
+  </div>
+  </div>
+
+    <div class="main-wrapper">
+    <div class="text-section">
+      <div class="section-title">
+        <h3>Our <span class="text-color-primary">experience</span> experts</h3>
+        <p class="text">IT Demo specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc.</p>
+        <div class="btn-box">
+          <a href="#">Join us now</a>
+          <a href="#">View all team <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-01-370x250.webp" alt="Dollie Horton" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i>     </a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Dollie Horton</h5>
+        <div class="position">Marketing</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-07-370x250.webp" alt="Stephen Mearsley" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Stephen Mearsley</h5>
+        <div class="position">President & CEO</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-04-370x250.webp" alt="Maggie Strickland" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Maggie Strickland</h5>
+        <div class="position">Financial Services</div>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <div class="team-image">
+        <img src="https://htmldemo.net/mitech/assets/images/team/team-member-02-370x250.webp" alt="Monica Blews" />
+        <div class="social-networks">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="team-info">
+        <h5 class="name">Monica Blews</h5>
+        <div class="position">Project Manager</div>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+
+  <h1 class="h1">Our work</h1>
+  <div class="project-section light">
+    <div class="project-text">
+      <h3>Food-Values</h3>
+      <p>Using the calories table you can define the energy value of the most popular food items and cooked foods...
+        <a href="./Singlepage.html">More Details</a>
+      </p>
+    </div>
+    <div class="project-image">
+      <img src="https://kmphitech.com/wp-content/uploads/2023/01/Banner-32.png" alt="Food-Values App"/>
+    </div>
+  </div>
+
+  <div class="project-section gray">
+  <div class="project-image">
+    <img src="https://kmphitech.com/wp-content/uploads/2023/01/1.png" alt="Lifereader App"/>
+  </div>
+  <div class="project-text">
+    <h3>Trip-Q</h3>
+    <p>Questions & Answers – general knowledge trip Q is a very interesting and popular offline trip Q game. In this game, you can prove that you are clever and train your brain! Choose the correct answer…
+      <a href="./Singlepage.html">More Details</a>
+    </p>
+  </div>
+</div>
+
+ <div class="footer-area-wrapper">
+  <div class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col info">
+           <h6> Contact</h6>
+          <ul class="text-muted">
+            <li><a href="#">contact@aeroland.com</a></li>
+            <li><a href="#">(+68)1221 09876</a></li>
+            <li><a href="#">www.ITDemo.xperts.com</a></li>
+            <li class="ads">58 Howard Street #2 San Francisco, CA 941</li>
+          </ul>
+        </div>
+
+        <!-- IT Services -->
+        <div class="col">
+          <h6>IT Services</h6>
+          <ul>
+            <li><a href="#">Managed IT</a></li>
+            <li><a href="#">IT Support</a></li>
+            <li><a href="#">IT Consultancy</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cyber Security</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#">Pick up locations</a></li>
+            <li><a href="#">Terms of Payment</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Support</h6>
+          <ul>
+            <li><a href="#">Forum Support</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Pricing and Plans</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      <div class="col gallery-col">
+  <h6>Our Gallery</h6>
+  <div class="footer-gallery">
+    <img src="./instagram1.jpg" alt="img">
+    <img src="./instagram2.jpg" alt="img">
+    <img src="./instagram3.jpg" alt="img">
+    <img src="./instagram4.jpg" alt="img">
+    <img src="./p3.jpg" alt="img">
+    <img src="./p4.jpg" alt="img">
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="copyright-text">
+      © 2023 IT Demo. <a href="#">All Rights Reserved.</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <script>
+    const counters = document.querySelectorAll('.number');
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let count = 0;
+      const increment = target / 100;
+
+      const updateCount = () => {
+        count += increment;
+        if (count < target) {
+          counter.textContent = Math.ceil(count) + suffix;
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.textContent = target + suffix;
+        }
+      };
+
+      updateCount();
+    });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marketing Agency</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <style>
+        body {
+      margin: 0;
+      background-color: #111;
+      color: #fff;
+    }
+    .navbar {
+      background-color: #111;
+      padding: 1rem 2rem;
+    }
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    .nav-link {
+      color: #ddd !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+    }
+    .nav-link:hover, .dropdown-item:hover {
+      color: #0056b3 !important;
+    }
+    .btn-cta {
+      background-color: #007BFF;
+      border: none;
+      border-radius: 20px;
+      padding: 0.5rem 1.2rem;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-cta:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    .dropdown-menu {
+      background-color: #222;
+    }
+    .dropdown-item {
+      color: #ccc;
+    }
+    .dropdown-item:hover {
+      background-color: #333;
+    }
+     .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 100px;
+      min-height: 100vh;
+    }
+    .hero-content {
+      max-width: 600px;
+      z-index: 2;
+    }
+    .hero-content h4 {
+      color: #456eff;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    .hero-content h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+    .hero-content h1 span {
+      color: #456eff;
+    }
+    .btn {
+      background: #456eff;
+      color: white;
+      padding: 16px 30px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 25px;
+    }
+    .btn:hover {
+      background: #254bdf;
+    }
+    .reviews {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .reviews img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+    .reviews span {
+      font-size: 15px;
+      color: #111;
+      font-weight: 500;
+    }
+    .reviews .stars {
+      color: #f5b70a;
+      font-size: 18px;
+    }
+    .stats {
+      display: flex;
+      gap: 60px;
+      font-size: 15px;
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      gap: 50px;
+    }
+    .stats h3 {
+      color: #456eff;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .hero-image {
+      flex-shrink: 0;
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero-image img {
+      max-width: 620px;
+      height: auto;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .hero-image img {
+        max-width: 100%;
+        margin-top: 30px;
+      }
+      .stats {
+        justify-content: center;
+      }
+    }
+    .num{
+        display: flex;
+        gap: 20px;
+    }
+    .section {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  margin-bottom: 30px;
+}
+.section img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.content {
+  max-width: 700px;
+}
+.content h5 {
+  color: #3b5bfc;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.content h2 {
+  font-size: 40px;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.content p {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.points {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.button-phone {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.button-phone button {
+  background-color: #3b5bfc;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.call-text {
+  font-size: 16px;
+  color: #999;
+}
+.call-text strong {
+  display: block;
+  color: #999;
+  font-size: 18px;
+  margin-top: 5px;
+}
+@media (max-width: 991px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 15px;
+  }
+ .section img {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .content h2 {
+    font-size: 32px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+  .points {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .content h2 {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+  .button-phone {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-phone button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .call-text {
+    font-size: 14px;
+  }
+  .call-text strong {
+    font-size: 16px;
+  }
+}
+     .sectio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 60px 5%;
+}
+.left {
+  max-width: 650px;
+  flex: 1;
+}
+.left h5 {
+  color: #3b5bfc;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.left h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.left p {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 30px;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: #f9fbff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.feature-card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.feature-card img {
+  width: 40px;
+  height: 40px;
+}
+.feature-card span {
+  font-size: 17px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.bottom-row .btn {
+  padding: 12px 32px;
+  border: 2px solid #3b5bfc;
+  border-radius: 30px;
+  font-size: 16px;
+  background: transparent;
+  color: #3b5bfc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.bottom-row .btn:hover {
+  background: #3b5bfc;
+  color: white;
+}
+.review {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  flex-wrap: wrap;
+}
+.review img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.review-stars {
+  color: #f6b100;
+  font-size: 18px;
+}
+.review-text {
+  font-size: 15px;
+  font-weight: bold;
+}
+.right img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 991px) {
+  .sectio {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .left h2 {
+    font-size: 32px;
+  }
+  .left p {
+    font-size: 16px;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 576px) {
+  .left h2 {
+    font-size: 26px;
+  }
+  .feature-card {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+  .feature-card img {
+    width: 30px;
+    height: 30px;
+  }
+  .feature-card span {
+    font-size: 15px;
+  }
+  .bottom-row .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .review-text {
+    font-size: 14px;
+  }
+  .right img {
+    width: 100%;
+  }
+} 
+   .contai {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.blog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.blog-subtitle {
+  color: #999;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.blog-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ccc;
+}
+.highlight-text {
+  color: #0066ff;
+}
+.blog-section {
+  padding: 80px 0;
+  background-color: #111;
+}
+.blog-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.blog-column {
+  flex: 0 0 32%;
+  max-width: 32%;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+.blog-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+.blog-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.blog-info {
+  padding: 20px;
+}
+.blog-meta {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+.blog-meta-icon {
+  margin-right: 5px;
+  color: #999;
+}
+.blog-title a {
+  font-size: 18px;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+}
+.blog-excerpt {
+  margin-top: 15px;
+  color: #666;
+  font-size: 15px;
+}
+.read-more-link a {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 15px;
+}
+.read-more-link i {
+  margin-left: 5px;
+}
+@media (max-width: 991px) {
+  .blog-column {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  .blog-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .blog-heading {
+    font-size: 28px;
+  }
+  .blog-subtitle {
+    font-size: 12px;
+  }
+  .blog-title a {
+    font-size: 16px;
+  }
+  .blog-excerpt {
+    font-size: 14px;
+  }
+}
+    .footer-area-wrapper {
+    color: #ccc;
+  }
+  .footer-area {
+    padding: 70px 0 40px;
+    border-top: 1px solid #333;
+  }
+  .footer-area h6 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer-area ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-area a {
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  .footer-area a:hover {
+    color: #1e90ff;
+  }
+  .footer-area img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  .footer-area .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-area .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .footer-area .col {
+    flex: 1 1 200px;
+    min-width: 180px;
+  }
+   .footer-bottom {
+    background-color: #181818;
+    padding: 20px;
+    color: #ccc;
+    font-size: 14px;
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer-bottom .copyright-text {
+    color: #ccc;
+  }
+  .footer-bottom .copyright-text a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  .footer-bottom .copyright-text a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-bottom .social-icons a {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .footer-bottom .social-icons i {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .footer-bottom .social-icons a:hover {
+    background-color: #1e90ff;
+  }
+  .footer-bottom .social-icons a:hover i {
+    color: #fff;
+  }
+  .faq-section {
+        margin: 0px 15%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .faq-left {
+      flex: 1;
+    }
+    .faq-left img {
+      width: 700px;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #3b5bfc;
+      border-radius: 20px;
+    }
+    .faq-right {
+      flex: 1;
+      max-width: 650px;
+    }
+    .faq-right h5 {
+      color: #3b5bfc;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .faq-right h2 {
+      font-size: 36px;
+      color: #999;
+      margin-bottom: 30px;
+    }
+    .accordion-item {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    .accordion-header {
+      background: #f9f9f9;
+      padding: 18px 24px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-header.active {
+      background: #3b5bfc;
+      color: white;
+    }
+    .accordion-body {
+      background: #fff;
+      padding: 16px 24px;
+      font-size: 16px;
+      color: #444;
+      display: none;
+    }
+    .accordion-body.show {
+      display: block;
+    }
+    .icon {
+      font-size: 22px;
+    }
+@media (max-width: 991px) {
+  .faq-section {
+    flex-direction: column;
+    margin: 40px 5%;
+    gap: 40px;
+  }
+  .faq-left img {
+    width: 100%;
+  }
+  .faq-right h2 {
+    font-size: 30px;
+  }
+  .accordion-header {
+    font-size: 17px;
+    padding: 16px 20px;
+  }
+  .accordion-body {
+    font-size: 15px;
+    padding: 14px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .faq-section {
+    margin: 30px 4%;
+  }
+  .faq-right h2 {
+    font-size: 24px;
+  }
+  .faq-right h5 {
+    font-size: 18px;
+  }
+  .accordion-header {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+  .accordion-body {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .icon {
+    font-size: 18px;
+  }
+}
+   .ads{
+    color: #bbb;
+  }
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.footer-gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.footer-gallery img:hover {
+  transform: scale(1.05);
+}
+   </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+     IT Demo
+  </a>
+  <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./index.html">Home</a></li>
+    <li><a class="dropdown-item" href="./DigitalAgency.html">Digital Agency</a></li>
+    <li><a class="dropdown-item" href="./AI.html">AI Technologies</a></li>
+    <li><a class="dropdown-item" href="./CustomSoftware.html">Software Solutions</a></li>
+    <li><a class="dropdown-item" href="./Seoservice.html">SEO Services</a></li>
+    <li><a class="dropdown-item" href="./Startup.html">Startup</a></li>
+    <li><a class="dropdown-item" href="./marketingAgency.html">Marketing Agency</a></li>
+    <li><a class="dropdown-item" href="./Helpdesk.html">Helpdesk</a></li>
+    <li><a class="dropdown-item" href="./AInetwork.html">AI Network</a></li>
+  </ul>
+</li>
+     <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./About-us.html">About Us — 1</a></li>
+    <li><a class="dropdown-item" href="./About-us2.html">About Us — 2</a></li>
+    <li><a class="dropdown-item" href="./Servicesa.html">Services — 1</a></li>
+    <li><a class="dropdown-item" href="./Servicesw.html">Services — 2</a></li>
+    <li><a class="dropdown-item" href="./ourteam.html">Our Team</a></li>
+    <li><a class="dropdown-item" href="./FAQs.html">FAQs</a></li>
+    <li><a class="dropdown-item" href="./pricing 1.html">Pricing — 1</a></li>
+    <li><a class="dropdown-item" href="./pricing2.html">Pricing — 2</a></li>
+    <li><a class="dropdown-item" href="./Contect-us.html">Contact Us — 1</a></li>
+    <li><a class="dropdown-item" href="./contect us2.html">Contact Us — 2</a></li>
+    <li><a class="dropdown-item" href="./AIfetures.html">AI Features</a></li>
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Tools</a>
+      <ul class="dropdown-menu">
+      </ul>
+    </li>
+  </ul>
+</li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portfolio</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="./ourwork.html">Our Works</a></li>
+          <li><a class="dropdown-item" href="./Singlepage.html">Single-Project</a></li>
+        </ul>
+      </li>
+    <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./blogs.html">Blog — Standard</a></li>
+    <li><a class="dropdown-item" href="./blogg.html">Blog — Grid</a></li>
+    <li><a class="dropdown-item" href="./blogws.html">With Sidebar</a></li>
+    <li><a class="dropdown-item" href="./blogwithout.html">Without Sidebar</a></li>
+  </ul>
+</li>
+      <li class="nav-item">
+        <a class="nav-link" href="./Contect-us.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="d-none d-lg-block ms-auto">
+    <a href="#" class="btn btn-cta">Get in Touch</a>
+  </div>
+</nav>
+
+ <section class="hero">
+    <div class="hero-content">
+      <h4>✨ Welcome to Marketing</h4>
+      <h1>
+        Boost Your <br />
+        Marketing Strategy <br />
+        with <span>IT Demo</span>
+      </h1>
+      <button class="btn">Let's Try Free For 14 Days</button>
+
+      <div class="reviews">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="user" />
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="user" />
+        <span class="stars">★★★★★</span>
+        <span>2960+ Client Reviews</span>
+      </div>
+
+      <div class="stats">
+        <div class="num">
+          <h3><b>30k+</b></h3>
+          <p>Happily <br>Active Client's</p>
+        </div>
+        <div class="num">
+          <h3><b>25</b></h3>
+          <p>Years of <br>experience <br>in startup building</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="./marketingh.png" alt="Hero Illustration" height="800px" width="800px"/>
+    </div>
+  </section>
+
+   <section class="section">
+    <img src="https://dreams4u.in/wp-content/uploads/2024/08/about_15_1.jpg" alt="Illustration" />
+    <div class="content">
+      <h5> About Marketing Agency</h5>
+      <h2>Optimize Your Marketing Efforts With IT Demo's Streamlined Solutions</h2>
+      <p>IT Demo is dedicated to revolutionizing marketing through cutting-edge technology, aiming to empower businesses to achieve unparalleled success in the digital landscape. What sets IT Demo apart is its deep expertise in leveraging advanced tools.</p>
+      
+      <div class="points">🚀 Skyrocketing Conversion Rates</div>
+      <div class="points">📈 Massive Lead Growth Rates</div>
+
+      <div class="button-phone">
+        <button>Get Started</button>
+        <div class="call-text">
+          Call Now!
+          <strong>(+68)1221 09876</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="sectio">
+    <div class="left">
+      <h5>✨ KAY OF FEATURE</h5>
+      <h2>All-In-One Marketing Powerhouse</h2>
+      <p>IT Demmo isn't just another marketing tool; it's an all-in-one platform designed to supercharge your marketing efforts. Here's a glimpse into the key features that empower.</p>
+      
+      <div class="features">
+        <div class="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2098/2098409.png" alt="icon" />
+          <span>Lead Generation & Management</span>
+        </div>
+        <div class="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2250/2250126.png" alt="icon" />
+          <span>Conversion Optimization & Personalization</span>
+        </div>
+        <div class="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3543/3543549.png" alt="icon" />
+          <span>Campaign Management & Analytics</span>
+        </div>
+        <div class="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="icon" />
+          <span>Content Management System</span>
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <button class="btn">VIEW DETAILS</button>
+        <div class="review">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user" />
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="user" />
+          <span class="review-stars">★★★★★</span>
+          <span class="review-text">2960+ Client Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="https://hamdanenterprises.com/wp-content/uploads/2024/05/feature-11-1.png" alt="illustration" />
+    </div>
+  </section>
+
+    <section class="faq-section">
+    <div class="faq-left">
+      <img src="https://img.freepik.com/free-photo/business-report-graphs-charts-business-reports-pile-documents-business-concept_1150-2254.jpg?ga=GA1.1.627833558.1747904160&semt=ais_items_boosted&w=740" alt="dashboard image" />
+    </div>
+    <div class="faq-right">
+      <h5>✨ FREQUENTLY ASKED QUESTION</h5>
+      <h2>Maximizing Your Success Benefits<br>Of Partnering With IT Demo</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">Do I need a marketing degree to use IT Demo?<span class="icon">+</span></div>
+        <div class="accordion-body">No. IT Demo is designed for all skill levels — no degree required.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header active">What kind of content can I create with IT Demo?<span class="icon">−</span></div>
+        <div class="accordion-body show">
+          As of my last knowledge update in January 2022, Digix refers to DigixGlobal, a company that tokenizes physical assets, primarily gold, on the Ethereum blockchain.
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Does IT Demo integrate with other tools I use?<span class="icon">+</span></div>
+        <div class="accordion-body">Yes, IT Demo supports integrations with most major platforms and CRMs.</div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">What kind of analytics does IT Demo offer?<span class="icon">+</span></div>
+        <div class="accordion-body">You’ll get campaign-level insights, conversion tracking, and detailed performance reports.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="blog-section">
+    <div class="contai">
+      <div class="blog-header">
+        <h6 class="blog-subtitle">BLOG & NEWS</h6>
+        <h3 class="blog-heading">Latest news are <span class="highlight-text">on top all times</span></h3>
+      </div>
+      <div class="blog-row">
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-01-370x230.webp" alt="Blog 1" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">5 Ways Technology Has Improved Business Today</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>They play a role in making operations more seamless, bridging the gap between authorities, consumers and businesses. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-02-370x230.webp" alt="Blog 2" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">5 Ways Technology Has Improved Business Today</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>They play a role in making operations more seamless, bridging the gap between authorities, consumers and businesses. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-column">
+          <div class="blog-card">
+            <div class="blog-image">
+              <a href="#"><img src="https://htmldemo.net/mitech/assets/images/blog/blog-07-770x400.webp" alt="Blog 3" /></a>
+            </div>
+            <div class="blog-info">
+              <div class="blog-meta">
+                <span class="far fa-calendar blog-meta-icon"></span> February 28, 2019
+              </div>
+              <h5 class="blog-title">
+                <a href="#">How Wireless Technology is Changing Business</a>
+              </h5>
+              <div class="blog-excerpt">
+                <p>It is far wiser to do your own installations and ensure that all data flowing through the organization has end-to-end encryption. …</p>
+              </div>
+              <div class="read-more-link">
+                <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="footer-area-wrapper">
+  <div class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col info">
+           <h6> Contact</h6>
+          <ul class="text-muted">
+            <li><a href="#">contact@aeroland.com</a></li>
+            <li><a href="#">(+68)1221 09876</a></li>
+            <li><a href="#">www.ITDemo.xperts.com</a></li>
+            <li class="ads">58 Howard Street #2 San Francisco, CA 941</li>
+          </ul>
+        </div>
+
+        <!-- IT Services -->
+        <div class="col">
+          <h6>IT Services</h6>
+          <ul>
+            <li><a href="#">Managed IT</a></li>
+            <li><a href="#">IT Support</a></li>
+            <li><a href="#">IT Consultancy</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cyber Security</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#">Pick up locations</a></li>
+            <li><a href="#">Terms of Payment</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Where to Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h6>Support</h6>
+          <ul>
+            <li><a href="#">Forum Support</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Pricing and Plans</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      <div class="col gallery-col">
+  <h6>Our Gallery</h6>
+  <div class="footer-gallery">
+    <img src="./instagram1.jpg" alt="img">
+    <img src="./instagram2.jpg" alt="img">
+    <img src="./instagram3.jpg" alt="img">
+    <img src="./instagram4.jpg" alt="img">
+    <img src="./p3.jpg" alt="img">
+    <img src="./p4.jpg" alt="img">
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="copyright-text">
+      © 2023 IT Demo. <a href="#">All Rights Reserved.</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+    const headers = document.querySelectorAll('.accordion-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const open = header.classList.contains('active');
+
+        document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+        document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('show'));
+
+        if (!open) {
+          header.classList.add('active');
+          header.nextElementSibling.classList.add('show');
+        }
+      });
+    });
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
